@@ -1,6 +1,9 @@
 .container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
 }
 
 .title {
