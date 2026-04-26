@@ -2,6 +2,9 @@
 <header>
 
 </header>
+    <!-- Background  -->
+    <div class="grid-background">
+
     <!-- Header -->
     <div class="flex flex-row justify-between space gap-10 p border border-gray border-dashed"> 
         <!-- About me image and bio -->
@@ -22,6 +25,8 @@
 
     <div>
         Main content goes here
+    </div>
+
     </div>
 </template>
 
