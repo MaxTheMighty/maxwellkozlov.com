@@ -1,11 +1,15 @@
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  margin: 0;
+@import "tailwindcss";
+
+.main-box {
+  border-width: 2px;
+  border-style: dotted;
+  @apply flex p-5;
 }
 
-.title {
-  display: inline-block;
+.about-me-box {
+  @apply flex flex-row flex-wrap gap-4 items-center;
+}
+
+.image-me {
+  @apply h-20 w-20;
 }
