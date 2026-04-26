@@ -1,13 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 @import "tailwindcss";
-
 @theme {
   --default-font-family: "Tinos";
+  --default-font-feature-settings: "";
 }
 
 .grid-background {
-  @apply h-screen w-full bg-white bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[24px_24px];
+  @apply h-screen w-full bg-gray-100 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[24px_24px];
 }
+
 .tinos-regular {
   font-family: "Tinos", serif;
   font-weight: 400;

@@ -14,6 +14,9 @@
             <p class="px-3 text-wrap">
                 My name is Maxwell and I am a Software Engineer with a passion for simulations and engines. I have professional experience with [legacy software sqlxpress stuff] and personal experience with [space simluation stuff]
             </p>
+            <p class="text-orange-600">
+                Sample orange text
+            </p>
         </div> 
         </div>
 
