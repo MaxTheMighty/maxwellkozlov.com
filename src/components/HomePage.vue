@@ -44,6 +44,8 @@
                 :title="project.title"
                 :technologies="project.technologies"
                 :highlights="project.highlights"
+                :content="project.content"
+                :repository="project.repository"
             />
         </div>
     </div>
@@ -66,6 +68,8 @@ interface Project {
     technologies: string[];
     highlights: string[];
     imageSrc: string;
+    content: string;
+    repository: string;
 }
 
 const links: Array<Link> = [
@@ -81,23 +85,17 @@ const links: Array<Link> = [
 
 const projects: Project[] = [
     {
-        title: "Simulation Sandbox",
-        technologies: ["C++", "OpenGL", "Physics"],
+        title: "Barnes-Hut Simulation",
+        technologies: ["Rust", "WebGPU"],
         highlights: [
             "Built a modular renderer and entity system for prototype simulations.",
             "Focused on clean abstractions that made it easy to iterate on scenes quickly."
         ],
-        imageSrc: profileImage
+        imageSrc: profileImage,
+        repository: "https://github.com/MaxTheMighty/BarnesHutSimulation",
+        content: "TODO"
     },
-    {
-        title: "Resume Website",
-        technologies: ["Vue", "TypeScript", "Tailwind CSS"],
-        highlights: [
-            "Created a polished single-page portfolio to showcase experience and projects.",
-            "Kept the layout flexible so new sections can be added without redesigning the whole page."
-        ],
-        imageSrc: profileImage
-    }
+
 ]
 
 </script>
