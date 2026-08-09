@@ -3,6 +3,7 @@
 @theme {
   --default-font-family: "Tinos";
   --default-font-feature-settings: "";
+  --color-brand-primary: #e74b08;
 }
 
 .grid-background {

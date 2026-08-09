@@ -1,0 +1,4 @@
+TODO (in priority order)
+- Fill out the main 
+- Add second project
+- Make the TODO list collapsible
