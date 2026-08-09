@@ -62,11 +62,11 @@ const props = defineProps<Props>();
 const technologiesPretty = props.technologies.join(" / ");
 const showPreview = ref<boolean>(false);
 
-const onLinkEnter = (e: Event) => {
+const onLinkEnter = () => {
   showPreview.value = true;
 };
 
-const onLinkLeave = (e: Event) => {
+const onLinkLeave = () => {
   showPreview.value = false;
 };
 </script>
