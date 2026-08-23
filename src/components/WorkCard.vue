@@ -13,23 +13,13 @@
             <h5 class="text-lg text-gray-500 italic tracking-[0.03em]">
               {{ technologiesPretty }}
             </h5>
-
             <!-- Link -->
-            <h5
-              class="text-lg underline decoration-dashed ml-auto text-brand-primary italic"
+            <h3
+              class="text-lg ml-auto text-brand-primary italic"
               link
             >
-              <a
-                :href="props.repository"
-                @mouseenter="onLinkEnter"
-                @mouseleave="onLinkLeave"
-                >Link</a
-              >
-            </h5>
-
-            <!-- I frame preview -->
-            <!-- Github doesn't let you embed its pages in an iframe, so we can't do this yet -->
-            <!-- <ProjectPreview :link="props.repository" :visible="showPreview"></ProjectPreview> -->
+            {{ startDate }} - {{ endDate }}
+            </h3>
           </div>
 
           <!-- Add the bullet points here -->
@@ -47,27 +37,19 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
 
 interface Props {
   imageSrc: string;
   title: string;
   technologies: string[];
   highlights: string[];
-  repository: string;
+  startDate: string;
+  endDate: string;
 }
 
 const props = defineProps<Props>();
 const technologiesPretty = props.technologies.join(" / ");
-const showPreview = ref<boolean>(false);
 
-const onLinkEnter = () => {
-  showPreview.value = true;
-};
-
-const onLinkLeave = () => {
-  showPreview.value = false;
-};
 </script>
 
 <style scoped></style>

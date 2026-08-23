@@ -44,7 +44,6 @@
                 :title="project.title"
                 :technologies="project.technologies"
                 :highlights="project.highlights"
-                :content="project.content"
                 :repository="project.repository"
             >
               <p>
@@ -54,6 +53,22 @@
                 Coloring algorithms allow for data-oriented visualizations. This project was originally implemented in <span class="text-brand-primary">Julia</span> as a proof of concept, later it was switched to Rust for a performant and compact implementation.
               </p> 
             </ProjectCard>
+
+            <label class="text-2xl">Work Experience</label> 
+            <WorkCard
+                v-for="work in workExperience"
+                :key="work.title"
+                :image-src="XYPROLogo"
+                :technologies="work.technologies"
+                :title="work.title"
+                :highlights="work.highlights"
+                :start-date="work.startDate"
+                :end-date="work.endDate"
+            >
+            <p>
+                At XYPRO, I led the development effort for the migration of SQLXPress, an interface for the SQL subsystem on the HPe Nonstop, from a legacy Delphi client and C99 server exceeding 1M LOC to a modern stack built on Rust, Vue, and Java. I worked closely with architects to outline key SQL features and their implementations, often providing insight into requirements and concerns for implementations. As a full-stack developer, I worked across the Tauri-based client through to the Spring Boot backend. I held regular code reviews with developers and automation engineers to ensure code quality. I ran our scrum meetings, led sprint planning, and onboarded new interns into the teams stack and processes. By utilizing Tauri and Vue, our new client showed large performance gains and provided a more modern look.
+            </p>
+            </WorkCard>
         </div>
     </div>
 
@@ -65,6 +80,8 @@
 import ProjectCard from './ProjectCard.vue';
 import Me from '../assets/me_2.jpeg';
 import SimulationGif from '../assets/barneshut_no_watermark.gif';
+import XYPROLogo from '../assets/xypro.png';
+import WorkCard from './WorkCard.vue';
 
 interface Link {
     url: string,
@@ -76,8 +93,16 @@ interface Project {
     technologies: string[];
     highlights: string[];
     imageSrc: string;
-    content: string;
     repository: string;
+}
+
+interface Work {
+    title: string;
+    technologies: string[];
+    highlights: string[];
+    imageSrc?: string;
+    startDate: string;
+    endDate: string;
 }
 
 const links: Array<Link> = [
@@ -103,10 +128,25 @@ const projects: Project[] = [
         ],
         imageSrc: SimulationGif,
         repository: "https://github.com/MaxTheMighty/BarnesHutSimulation",
-        content: "This project simulates gravitational interactions between bodies to model cosmic evolution in Rust. By utilizing the Barnes-Hut algorithm, the computational complexity of this project drops from O(n²) to O(n log n). Hundreds of thousands of bodies can be simulated in realtime to visualize the evolution of cosmic bodies. By utilizing Rust and WebGPU, the calculations for the simulation are be parallelized allowing for multi-million body simulations. Coloring algorithms allow for data-oriented visualizations. Originally implemented in Julia using the Naive algorithm"
-        
+
     },
 
 ]
 
+const workExperience: Work[] = [{
+    title: "Engineer I - Software",
+    technologies: ["Rust","Vue","Tauri","Typescript","Delphi","Java","Springboot","SQL"],
+    highlights: [
+        "Led the migration of a 1M+ LOC legacy DBMS client from Delphi/C99 to a modern Rust, Vue, and Java stack",
+        "Delivered significant performance and responsiveness by rebuilding the client on Tauri and Rust",
+        "Architected and modernized both the front-end and back-end of our large DBMS client",
+        "Maintained our legacy Delphi-based client, providing bugfixes and new SQL feature support",
+        "Developed a Tauri-based client for HPe Nonstop specific keystore functionality from the ground up",
+        "Contributed to migration planning and provided feature demos to stakeholders",
+        "Enforced code quality and security standards through Rust code reviews",
+        "Acted as a subject matter expert for HPe Nonstop subsystems"],
+    startDate: "January 2024",
+    endDate: "Present"
+
+}]
 </script>
